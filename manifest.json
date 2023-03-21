@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Simple chatGPT Clipper",
+  "author": "kazuya hirobe",
+  "version": "1.0",
+  "description": "Get specific HTML element and copy to clipboard",
+  "permissions": ["activeTab", "scripting", "clipboardWrite"],
+  "action": {
+    "default_popup": "",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
