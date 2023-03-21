@@ -1,10 +1,18 @@
-
 function showBadge(text, color) {
   chrome.action.setBadgeBackgroundColor({ color: color });
   chrome.action.setBadgeText({ text: text });
   setTimeout(() => {
     chrome.action.setBadgeText({ text: '' });
   }, 3000);
+}
+
+function writeToClipboard(markdown) {
+  const el = document.createElement('textarea');
+  el.value = markdown;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
 }
 
 chrome.action.onClicked.addListener((tab) => {
@@ -14,7 +22,6 @@ chrome.action.onClicked.addListener((tab) => {
       files: ['turndown.umd.js'],
     },
     () => {
-
       chrome.scripting.executeScript(
         {
           target: { tabId: tab.id },
@@ -50,16 +57,30 @@ chrome.action.onClicked.addListener((tab) => {
               }
             });
             mds.pop(); // 最後の1つはリストなので不要
-            const markdown = titleMarkdown + mds.join('\n\n---\n');
-            navigator.clipboard.writeText(markdown);
+            const markdown = titleMarkdown + mds.join('\n\n---\n');            return markdown; // この行を追加します。
           },
         },
-        () => {
+        (results) => {
           if (chrome.runtime.lastError) {
             console.error(chrome.runtime.lastError);
-            showBadge('Error','#800000');
+            showBadge('Error', '#800000');
           } else {
-            showBadge('Copied','#008000');
+            const markdown = results[0].result; // 結果を取得します。
+            chrome.scripting.executeScript(
+              {
+                target: { tabId: tab.id },
+                function: writeToClipboard,
+                args: [markdown],
+              },
+              () => {
+                if (chrome.runtime.lastError) {
+                  console.error(chrome.runtime.lastError);
+                  showBadge('Error', '#800000');
+                } else {
+                  showBadge('Copied', '#008000');
+                }
+              }
+            );
           }
         }
       );
