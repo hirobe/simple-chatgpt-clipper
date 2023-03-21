@@ -19,6 +19,8 @@ chrome.action.onClicked.addListener((tab) => {
         {
           target: { tabId: tab.id },
           function: () => {
+            const title = document.querySelector('title').textContent;
+            const titleMarkdown = (title) ? '# '+title+'\n\n' : '';
 
             // class : items-start
             const items = document.querySelectorAll('.items-start');
@@ -40,15 +42,15 @@ chrome.action.onClicked.addListener((tab) => {
               const editButtons = item.parentNode?.parentNode?.querySelectorAll('.self-end button');
               if (editButtons.length == 1) {
                 const text = item.innerText;
-                mds.push('# 🤔 User\n' + (text.length > 0 && text[0] == '\n' ? '' : '\n') + text);
+                mds.push('## 🤔 User\n' + (text.length > 0 && text[0] == '\n' ? '' : '\n') + text);
               } else {
                 const html = item.outerHTML;
                 const markdown = turndownService.turndown(html);
-                mds.push('# 🤖 Assistant\n\n' + markdown);
+                mds.push('## 🤖 Assistant\n\n' + markdown);
               }
             });
             mds.pop(); // 最後の1つはリストなので不要
-            const markdown = mds.join('\n\n---\n');
+            const markdown = titleMarkdown + mds.join('\n\n---\n');
             navigator.clipboard.writeText(markdown);
           },
         },
