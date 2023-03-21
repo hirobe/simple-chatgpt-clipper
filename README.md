@@ -1,14 +1,10 @@
-## Simple ChatGPT Clipper
+# Simple ChatGPT Clipper
 
-Simple ChatGPT Clipper is a Chrome extension that allows you to copy messages from ChatGPT's website to your clipboard. When you click the toolbar button, the message will be converted to Markdown format.
+This Chrome extension is a tool that allows you to easily copy messages displayed on the ChatGPT website to your clipboard. ChatGPT responses are converted to Markdown format, while user input remains as plain text.
 
 ![Screen shot](screenshot.png)
 
-### Features
-
--   The current version supports Manifest V3.
--   You can download and install it from Github to use.
--   Simple ChatGPT Clipper supports ChatGPT's website as of March 21, 2023. There is a possibility that it may not work in the future due to updates in the website layout. We do not promise to update this extension when that happens.
+**Note**: This extension is compatible with the ChatGPT site as of March 21, 2023. It may not work if the site layout is updated. As for updating the extension, it depends on the mood at the time, so no promises can be made.
 
 ### Installation
 
@@ -32,35 +28,30 @@ This project is released under the MIT license. [Turndown](https://github.com/mi
 
 ---
 Japanese
+# Simple ChatGPT Clipper
 
-## Simple ChatGPT Clipper
-
-Simple ChatGPT Clipperは、Chrome拡張機能です。ツールバーのボタンを押すと、ChatGPTのWebサイトから表示されているメッセージをクリップボードにコピーすることができます。ChatGPTの回答はMarkdownに変換されます。
+このChrome拡張機能は、ChatGPTのWebサイトから表示されているメッセージを簡単にクリップボードにコピーできるようにするツールです。ChatGPTの回答はMarkdown形式に変換され、ユーザの入力はテキストのままコピーされます。
 
 ![Screen shot](screenshot.png)
 
-### 特徴
+**注意**: この拡張機能は、2023年3月21日時点のChatGPTのサイトに対応しています。サイトのレイアウトが更新されると動作しなくなる可能性があります。拡張機能の更新に関しては、その時の気分次第で決まるため、約束はできません。
 
--   現在のバージョンはManifest V3に対応しています。
--   GithubからダウンロードしてChromeに登録して使用することができます。
--   Simple ChatGPT Clipperは、2023.3.21時点のChatGPTのサイトに対応しています。将来的にサイトのレイアウト更新により動作しなくなる可能性があります。この拡張機能の更新については、その時の気分次第であり、約束するものではありません。
+## インストール
 
-### インストール
-
-1.  このプロジェクトをGithubからダウンロードします。
+1.  Githubからこのプロジェクトをダウンロードします。
 2.  Google Chromeを開き、[chrome://extensions/](chrome://extensions/)にアクセスします。
 3.  右上の「デベロッパーモード」を有効にします。
-4.  「パッケージされていない拡張機能を読み込む」をクリックして、ダウンロードしたフォルダ配下の `/chrome-extension` フォルダを選択します。
-5.  拡張機能が有効になりました。
+4.  「パッケージされていない拡張機能を読み込む」をクリックし、ダウンロードしたフォルダ内の `/chrome-extension` フォルダを選択します。
+5.  拡張機能が有効になります。
 6.  ツールバーの拡張機能アイコンをクリックします。
 7.  Simple ChatGPT Clipperをピン留めします。これでツールバーにアイコンが表示されます。
 
-### 使い方
+## 使い方
 
 1.  ChatGPTのWebサイトで質問を入力します。
 2.  Simple ChatGPT Clipperのアイコンをクリックします。
 3.  クリップボードにMarkdown形式の回答がコピーされます。
 
-### ライセンス
+## ライセンス
 
 このプロジェクトはMITライセンスの下で公開されています。[Turndown](https://github.com/mixmark-io/turndown/blob/master/LICENSE) を使用しています。その他ソースコードの生成にChatGPTを使用しています。
