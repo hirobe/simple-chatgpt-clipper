@@ -2,6 +2,8 @@
 
 Simple ChatGPT Clipper is a Chrome extension that allows you to copy messages from ChatGPT's website to your clipboard. When you click the toolbar button, the message will be converted to Markdown format.
 
+![Screen shot](screenshot.png)
+
 ### Features
 
 -   The current version supports Manifest V3.
@@ -34,6 +36,8 @@ Japanese
 ## Simple ChatGPT Clipper
 
 Simple ChatGPT Clipperは、Chrome拡張機能です。ツールバーのボタンを押すと、ChatGPTのWebサイトから表示されているメッセージをクリップボードにコピーすることができます。ChatGPTの回答はMarkdownに変換されます。
+
+![Screen shot](screenshot.png)
 
 ### 特徴
 
