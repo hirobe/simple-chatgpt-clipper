@@ -26,7 +26,7 @@ ChatGPT Clipper is a Chrome extension that allows you to copy messages from Chat
 
 ### License
 
-This project is released under the MIT license. Turndown is used to generate Markdown.
+This project is released under the MIT license. Turndown is used to generate Markdown. ChatGPT is used for other source code generation.
 
 ---
 Japanese
@@ -59,4 +59,4 @@ ChatGPT Clipperは、Chrome拡張機能です。ツールバーのボタンを�
 
 ### ライセンス
 
-このプロジェクトはMITライセンスの下で公開されています。Turndownを使用してMarkdownを生成しています。
+このプロジェクトはMITライセンスの下で公開されています。Turndownを使用してMarkdownを生成しています。その他ソースコードの生成にChatGPTを使用しています。
