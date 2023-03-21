@@ -39,9 +39,9 @@ chrome.action.onClicked.addListener((tab) => {
             turndownService.addRule('codeBlock', {
               filter: 'pre',
               replacement: function (content, node) {
-                const lang = node.querySelector('.rounded-md div span').innerText ?? '';
-                const code = node.querySelector('code').innerText;
-                return '```' + lang + '\n' + code + '```\n';
+                const lang = node.querySelector('.rounded-md div span');
+                const code = node.querySelector('code');
+                return '```' + (lang ? lang.innerText : '') + '\n' + (code ? code.innerText : '') + '```\n';
               }
             });
 
@@ -88,10 +88,10 @@ chrome.action.onClicked.addListener((tab) => {
             items.forEach((item) => {
               const editButtons = item.parentNode?.parentNode?.querySelectorAll('.self-end button');
               if (editButtons.length == 1) {
-                const text = item.innerText;
+                const text = item.innerText ?? '';
                 mds.push('## 🤔 User\n' + (text.length > 0 && text[0] == '\n' ? '' : '\n') + text);
               } else {
-                const html = item.outerHTML;
+                const html = item.outerHTML ?? '';
                 const markdown = turndownService.turndown(html);
                 mds.push('## 🤖 Assistant\n\n' + markdown);
               }
