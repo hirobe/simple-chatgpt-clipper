@@ -13,7 +13,7 @@ Simple ChatGPT Clipper is a Chrome extension that allows you to copy messages fr
 1.  Download this project from Github.
 2.  Open Google Chrome and go to [chrome://extensions/](chrome://extensions/).
 3.  Enable "Developer mode" in the top right corner.
-4.  Click "Load unpacked" and select the downloaded folder.
+4.  Click on "Load Unpackaged" and select the `/chrome-extension` folder under the downloaded folder.
 5.  The extension is now enabled.
 6.  Click on the Extensions icon on the toolbar
 7.  Pin the Simple ChatGPT Clipper. The icon will now appear on your toolbar.
@@ -46,7 +46,7 @@ Simple ChatGPT Clipperは、Chrome拡張機能です。ツールバーのボタ�
 1.  このプロジェクトをGithubからダウンロードします。
 2.  Google Chromeを開き、[chrome://extensions/](chrome://extensions/)にアクセスします。
 3.  右上の「デベロッパーモード」を有効にします。
-4.  「パッケージされていない拡張機能を読み込む」をクリックして、ダウンロードしたフォルダを選択します。
+4.  「パッケージされていない拡張機能を読み込む」をクリックして、ダウンロードしたフォルダ配下の `/chrome-extension` フォルダを選択します。
 5.  拡張機能が有効になりました。
 6.  ツールバーの拡張機能アイコンをクリックします。
 7.  Simple ChatGPT Clipperをピン留めします。これでツールバーにアイコンが表示されます。
