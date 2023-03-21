@@ -1,10 +1,10 @@
 # Simple ChatGPT Clipper
 
-![Screen shot](screenshot.png)
-
 This Chrome extension is a tool that allows you to easily copy messages displayed on the ChatGPT website to your clipboard. ChatGPT responses are converted to Markdown format, while user input remains as plain text.
 
 **Note**: This extension is compatible with the ChatGPT site as of March 21, 2023. It may not work if the site layout is updated. As for updating the extension, it depends on the mood at the time, so no promises can be made.
+
+![Screen shot](screenshot.png)
 
 ### Installation
 
@@ -30,11 +30,11 @@ This project is released under the MIT license. [Turndown](https://github.com/mi
 Japanese
 # Simple ChatGPT Clipper
 
-![Screen shot](screenshot.png)
-
 このChrome拡張機能は、ChatGPTのWebサイトから表示されているメッセージを簡単にクリップボードにコピーできるようにするツールです。ChatGPTの回答はMarkdown形式に変換され、ユーザの入力はテキストのままコピーされます。
 
 **注意**: この拡張機能は、2023年3月21日時点のChatGPTのサイトに対応しています。サイトのレイアウトが更新されると動作しなくなる可能性があります。拡張機能の更新に関しては、その時の気分次第で決まるため、約束はできません。
+
+![Screen shot](screenshot.png)
 
 ## インストール
 
