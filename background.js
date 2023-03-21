@@ -44,6 +44,46 @@ chrome.action.onClicked.addListener((tab) => {
                 return '```' + lang + '\n' + code + '```\n';
               }
             });
+
+            turndownService.addRule('tables', {
+              filter: ['table', 'thead', 'tbody', 'tfoot', 'tr', 'th', 'td'],
+              replacement: function (content, node) {
+                if (node.tagName === 'TABLE') {
+                  return '\n\n' + content + '\n\n';
+                } else if (node.tagName === 'THEAD' || node.tagName === 'TBODY' || node.tagName === 'TFOOT') {
+                  return content + '|\n';
+                } else if (node.tagName === 'TR') {
+                  return content + (node.nextElementSibling ? '|\n' : '');
+                } else if (node.tagName === 'TH' || node.tagName === 'TD') {
+                  const colspan = node.getAttribute('colspan') || 1;
+                  const separator = '|';
+                  let cellContent = node.innerHTML
+                    .replace(/<br\s*\/?>/gi, '\n')
+                    .replace(/^\s+|\s+$/g, '');
+                  cellContent = turndownService.turndown(cellContent);
+                  const cells = [];
+                  for (let i = 0; i < colspan; i++) {
+                    cells.push(cellContent);
+                  }
+                  return separator + cells.join(separator);
+                }
+              }
+            });
+            // Add a rule for generating table header row separators
+            turndownService.addRule('tableHeaderSeparator', {
+              filter: function (node) {
+                return (
+                  node.tagName === 'THEAD' &&
+                  node.parentNode.tagName === 'TABLE'
+                );
+              },
+              replacement: function (content, node) {
+                const row = node.querySelector('tr');
+                const ths = Array.from(row.querySelectorAll('th'));
+                const headerSeparator = ths.map(() => '| --- ').join('');
+                return content + '\n' + headerSeparator + '|\n';
+              }
+            });
             var mds = [];
             items.forEach((item) => {
               const editButtons = item.parentNode?.parentNode?.querySelectorAll('.self-end button');
@@ -57,7 +97,8 @@ chrome.action.onClicked.addListener((tab) => {
               }
             });
             mds.pop(); // 最後の1つはリストなので不要
-            const markdown = titleMarkdown + mds.join('\n\n---\n');            return markdown; // この行を追加します。
+            const markdown = titleMarkdown + mds.join('\n\n---\n');
+            return markdown;
           },
         },
         (results) => {
