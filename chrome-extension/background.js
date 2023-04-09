@@ -30,7 +30,7 @@ chrome.action.onClicked.addListener((tab) => {
             const titleMarkdown = (title) ? '# '+title+'\n\n' : '';
 
             // class : items-start
-            const items = document.querySelectorAll('.items-start');
+            const items = document.querySelector('main').querySelectorAll('.items-start');
             const turndownService = new TurndownService({
               codeBlockStyle: 'fenced',
               headingStyle: 'atx',
@@ -96,7 +96,6 @@ chrome.action.onClicked.addListener((tab) => {
                 mds.push('## 🤖 Assistant\n\n' + markdown);
               }
             });
-            mds.pop(); // 最後の1つはリストなので不要
             const markdown = titleMarkdown + mds.join('\n\n---\n');
             return markdown;
           },
